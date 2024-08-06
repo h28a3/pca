@@ -13,12 +13,12 @@ mu = np.mean(X, axis=0)
 cov = np.cov(X.T)
 eig_val,P = np.linalg.eig(cov)
 
-#ŒÅ—L’l‚ğ‘å‚«‚¢‡‚É•À‚Ñ‘Ö‚¦
+#å›ºæœ‰å€¤ã‚’å¤§ãã„é †ã«ä¸¦ã³æ›¿ãˆ
 eigen_id = np.argsort(eig_val)[::-1]
 eig_val = eig_val[eigen_id]
 P = P[:,eigen_id]
 
-#”’F‰»
+#ç™½è‰²åŒ–
 wh=[]
 for i in range(M):
     tmp=[]
@@ -30,7 +30,7 @@ for i in range(M):
     wh.append(tmp)
 wh = np.linalg.inv(wh)
 
-#’†S‰»
+#ä¸­å¿ƒåŒ–
 for i in range(N):
     for j in range(M):
         X[i][j] -= mu[j]
